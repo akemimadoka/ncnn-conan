@@ -5,7 +5,8 @@ import os
 CMakeOptions = [("NCNN_OPENMP", True), ("NCNN_STDIO", True), ("NCNN_STRING", True), ("NCNN_INSTALL_SDK", True),
                 ("NCNN_OPENCV", False), ("NCNN_BENCHMARK",
                                          False), ("NCNN_PIXEL", True), ("NCNN_PIXEL_ROTATE", False),
-                ("NCNN_CMAKE_VERBOSE", False), ("NCNN_VULKAN", False), ("NCNN_REQUANT", False), ("NCNN_AVX2", False)]
+                ("NCNN_CMAKE_VERBOSE", False), ("NCNN_VULKAN", False), ("NCNN_REQUANT", False), ("NCNN_AVX2", False),
+                ("NCNN_BUILD_TOOLS", False)]
 
 class NcnnConan(ConanFile):
     name = "ncnn"
