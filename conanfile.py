@@ -43,6 +43,9 @@ class NcnnConan(ConanFile):
         cmake = CMake(self)
         cmake.definitions["BUILD_SHARED_LIBS"] = "ON" if self.options.shared else "OFF"
 
+        if self.options.NCNN_VULKAN:
+            raise RuntimeError("Sorry, vulkan not supported for now.")
+
         disableRtti = self.options.NCNN_DISABLE_RTTI
         if disableRtti != "Default":
             cmake.definitions["NCNN_DISABLE_RTTI"] = disableRtti
