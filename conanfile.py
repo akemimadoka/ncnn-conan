@@ -31,7 +31,7 @@ class NcnnConan(ConanFile):
 
     generators = "cmake"
 
-    exports_sources = ["CMakeLists.txt"]
+    exports_sources = "CMakeLists.txt"
 
     _source_dir = "ncnn"
 
@@ -57,6 +57,7 @@ class NcnnConan(ConanFile):
         for CMakeOption in CMakeOptions:
             cmake.definitions[CMakeOption[0]] = getattr(
                 self.options, CMakeOption[0])
+
         cmake.configure()
         return cmake
 
@@ -77,3 +78,6 @@ class NcnnConan(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)
+    
+    def package_id(self):
+        del self.info.options.NCNN_CMAKE_VERBOSE
