@@ -10,7 +10,7 @@ CMakeOptions = [("NCNN_OPENMP", True), ("NCNN_STDIO", True), ("NCNN_STRING", Tru
 
 class NcnnConan(ConanFile):
     name = "ncnn"
-    version = "latest"
+    version = "20190906"
     license = "BSD-3-Clause"
     author = "Tencent"
     url = "https://github.com/Tencent/ncnn"
@@ -37,7 +37,7 @@ class NcnnConan(ConanFile):
 
     def source(self):
         git = tools.Git(folder=self._source_dir)
-        git.clone("https://github.com/Tencent/ncnn.git", "master")
+        git.clone("https://github.com/Tencent/ncnn.git", "20190906")
 
     def configure_cmake(self):
         cmake = CMake(self)
